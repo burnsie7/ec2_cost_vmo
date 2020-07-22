@@ -1,0 +1,24 @@
+{
+    "MIN_TIME_UNDERUTILIZED": 86400,
+    "QUERY_ROLLUP": 3600,
+    "SCOPE": "*",
+    "TAGS": "team, app, service",
+    "DD_COMBINED_METRIC": "datadog.demo.underutilized.combined.hosts.count",
+    "METRICS": [
+        {
+            "metric": "aws.ec2.cpuutilization.maximum",
+	    "aggregation": "max",
+            "threshold": 40,
+            "operator": "less_than",
+            "custom_metric": "datadog.demo.underutilized.cpu.hosts.count"
+        },
+        {
+            "metric": "system.mem.pct_usable",
+	    "aggregation": "max",
+            "threshold": 0.60,
+            "operator": "greater_than",
+            "custom_metric": "datadog.demo.underutilized.mem.hosts.count"
+        }
+    ]
+}
+
