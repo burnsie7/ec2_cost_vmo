@@ -9,7 +9,7 @@ import json
 
 from datadog import statsd
 
-files = ['output_metrics.json', 'pricing_metrics.json']
+files = ['custom_metrics.json', 'pricing_metrics.json']
 
 for file in files:
     cnt = 0
